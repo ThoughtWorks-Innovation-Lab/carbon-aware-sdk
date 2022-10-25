@@ -4,11 +4,13 @@ using Microsoft.AspNetCore.Mvc;
 using CarbonAware.Model;
 using System.Diagnostics;
 using Swashbuckle.AspNetCore.Annotations;
+using System.Web.Http.Cors;
 
 namespace CarbonAware.WebApi.Controllers;
 
 [ApiController]
 [Route("emissions")]
+[EnableCors(origins: "AllowOrigin", headers: "*", methods: "*")]
 public class CarbonAwareController : ControllerBase
 {
     private readonly ILogger<CarbonAwareController> _logger;
